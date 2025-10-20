@@ -1,4 +1,3 @@
-
 INSERT INTO clientes (
     nome,
     cpf,
@@ -154,4 +153,5 @@ DELETE FROM Agendamentos WHERE id_agendamento = 1;
 DELETE FROM Servicos WHERE id_servico = 1;
 
 DELETE FROM Clientes WHERE id_cliente = 1;
+
 
