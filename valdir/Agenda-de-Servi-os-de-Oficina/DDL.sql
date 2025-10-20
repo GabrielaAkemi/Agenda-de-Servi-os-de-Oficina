@@ -2,8 +2,7 @@ CREATE TABLE clientes(
 nome VARCHAR(100) NOT NULL,
 id_cliente INT PRIMARY KEY AUTO_INCREMENT,
 telefone varchar(11) NOT NULL,
-cpf INT UNIQUE,
-CHECK (telefone REGEXP '^\([0-9]{2}\) [0-9]{5}-[0-9]{4}$')
+cpf VARCHAR(11) UNIQUE
 );
 
 CREATE TABLE veiculos(
@@ -12,8 +11,7 @@ id_cliente_ref INT NOT NULL,
 placa VARCHAR(7) NOT NULL,
 modelo VARCHAR(50) NOT NULL,
 marca VARCHAR(50) NOT NULL,
-ano DATETIME NOT NULL,
-CHECK (placa REGEXP '^[A-Z]{3}-[0-9]{4}$'),
+ano DATE NOT NULL,
 FOREIGN KEY (id_cliente_ref) REFERENCES Clientes(id_cliente)
 );
 
@@ -35,5 +33,3 @@ FOREIGN KEY (id_cliente_ref) REFERENCES Clientes(id_cliente),
 FOREIGN KEY (id_veiculo_ref) REFERENCES Veiculos(id_veiculo),
 FOREIGN KEY (id_servico_ref) REFERENCES Servicos(id_servico)
 );
-
-
