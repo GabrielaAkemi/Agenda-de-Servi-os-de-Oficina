@@ -11,8 +11,7 @@ id_cliente_ref INT NOT NULL,
 placa VARCHAR(7) NOT NULL,
 modelo VARCHAR(50) NOT NULL,
 marca VARCHAR(50) NOT NULL,
-ano DATE NOT NULL,
-FOREIGN KEY (id_cliente_ref) REFERENCES Clientes(id_cliente)
+ano DATE NOT NULL
 );
 
 CREATE TABLE servicos(
@@ -28,8 +27,5 @@ id_cliente_ref INT NOT NULL,
 id_veiculo_ref INT NOT NULL,
 id_servico_ref INT NOT NULL,
 data_hora DATETIME NOT NULL,
-status enum('Agendado','Em andamento','Concluído','Cancelado') NOT NULL,
-FOREIGN KEY (id_cliente_ref) REFERENCES Clientes(id_cliente),
-FOREIGN KEY (id_veiculo_ref) REFERENCES Veiculos(id_veiculo),
-FOREIGN KEY (id_servico_ref) REFERENCES Servicos(id_servico)
+status enum('Agendado','Em andamento','Concluído','Cancelado') NOT NULL
 );
