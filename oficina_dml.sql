@@ -1,3 +1,4 @@
+
 INSERT INTO clientes (
     nome,
     cpf,
@@ -135,23 +136,41 @@ INSERT INTO agendamentos (
 );
 
 SELECT * FROM agendamentos WHERE id_cliente_ref = 1;
+SELECT * FROM agendamentos WHERE id_cliente_ref = 2;
+SELECT * FROM agendamentos WHERE id_cliente_ref = 3;
 
-SELECT * FROM servicos;
+
+SELECT * FROM servicos WHERE descricao like "%Óleo%";
+SELECT * FROM servicos WHERE descricao like "%Porta%";
+SELECT * FROM servicos WHERE descricao like "%Correia%";
+
 
 SELECT * FROM veiculos WHERE id_cliente_ref = 1;
+SELECT * FROM veiculos WHERE id_cliente_ref = 2;
+SELECT * FROM veiculos WHERE id_cliente_ref = 3;
 
 
-UPDATE agendamentos SET status = 'concluído' WHERE id_agendamento = 1;
+UPDATE agendamentos SET status = 'concluído' WHERE id_agendamentos = 1;
+UPDATE agendamentos SET status = 'Em andamento' WHERE id_agendamentos = 2;
+UPDATE agendamentos SET status = 'Em andamento' WHERE id_agendamentos = 3;
 
-UPDATE servicos SET preco = 180.00 WHERE id_servico = 1;
+UPDATE servicos SET preco = 150.00 WHERE id_servico = 1;
+UPDATE servicos SET preco = 500.00 WHERE id_servico = 2;
+UPDATE servicos SET preco = 250.00 WHERE id_servico = 3;
 
-UPDATE clientes SET telefone = '(11) 99876-5432' WHERE id_cliente = 1;
+UPDATE clientes SET telefone = '1499806062' WHERE id_cliente = 1;
+UPDATE clientes SET telefone = '14997725544' WHERE id_cliente = 2;
+UPDATE clientes SET telefone = '14981120002' WHERE id_cliente = 3;
 
 
-DELETE FROM Agendamentos WHERE id_agendamento = 1;
+DELETE FROM agendamentos WHERE id_agendamentos = 1;
+DELETE FROM agendamentos WHERE id_agendamentos = 2;
+DELETE FROM agendamentos WHERE id_agendamentos = 3;
 
-DELETE FROM Servicos WHERE id_servico = 1;
+DELETE FROM servicos WHERE id_servico = 1;
+DELETE FROM servicos WHERE id_servico = 2;
+DELETE FROM servicos WHERE id_servico = 3;
 
-DELETE FROM Clientes WHERE id_cliente = 1;
+DELETE FROM clientes WHERE id_cliente = 1;
 
 
